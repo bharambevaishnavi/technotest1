@@ -44,3 +44,6 @@ app.post('/addBook', (req, res) => {
 		res.status(400).send("Error ! Unable to add the new book !!!");
 	});
 });
+app.post('/Show', (req, res) => {
+	/*complete this prototype*/
+});
