@@ -44,6 +44,13 @@ app.post('/addBook', (req, res) => {
 		res.status(400).send("Error ! Unable to add the new book !!!");
 	});
 });
-app.post('/Show', (req, res) => {
-	/*complete this prototype*/
+app.get('/Show', (req, res) => {
+    Book.find({})
+    .then((book) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(book);
+    }).catch(err => {
+		res.status(400).send("Error ! Unable to show books!");
+	});
 });
